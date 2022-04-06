@@ -1,0 +1,34 @@
+@use 'variables'
+
+.footer
+    background: variables.$theme-light
+    .top
+        display: flex
+        flex-direction: column
+        padding: 48px
+        gap: 20px
+        border-bottom: 2px solid #fff
+        .socials
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 40px
+        .nav
+            display: flex
+            justify-content: center
+            align-items: center
+            gap: 40px
+            .navlink
+                color: variables.$grey-5
+    .copyright
+        color: variables.$grey-5
+        font-size: 12px
+        text-align: center
+        padding: 15px
+@media screen and (min-width: 375px) and (max-width: 568px)
+    .wrap
+        .top
+            flex-direction: column-reverse
+            gap: 40px
+            .nav
+                flex-direction: column

@@ -1,0 +1,33 @@
+@use 'variables'
+
+.option
+    display: flex
+    align-items: center
+    justify-content: space-between
+    gap: 10px
+    .check
+        input
+            display: none
+            &:checked
+                & ~ svg
+                    display: none
+
+        label
+            width: 24px
+            height: 24px
+            display: flex
+            justify-content: center
+            align-items: center
+            border-radius: 5px
+            background: variables.$grey-9
+    .name
+        cursor: pointer
+        color: variables.$grey-5
+        font-size: 16px
+        flex-grow: 1
+        label
+            display: block
+    .price
+        font-size: 16px
+        color: variables.$grey-1
+        font-weight: 500

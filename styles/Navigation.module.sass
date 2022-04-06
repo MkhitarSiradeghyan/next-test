@@ -1,0 +1,152 @@
+@use 'variables'
+
+.navigation
+    width: 100%
+    background: variables.$grey-0
+    position: sticky
+    top: 0
+    z-index: 999
+    height: 84px
+    .wrap
+        width: 100%
+        display: flex
+        justify-content: space-between
+        align-items: center
+        gap: 3em
+        height: 100%
+        .bg
+            width: 100%
+            height: 100%
+            background: none
+            height: 0
+            transition: 0.8s
+            position: fixed
+            top: 60px
+            left: 0
+        .fake
+            position: fixed
+            width: 100%
+            height: 0
+            display: block
+            left: 0
+            top: 0
+            z-index: 99
+        input
+            display: none
+        .burger
+            width: 18px
+            height: 12px
+            display: none
+            flex-direction: column
+            justify-content: space-between
+            align-items: center
+            .line
+                width: 100%
+                height: 2px
+                border-radius: 2px
+                background: variables.$theme-dark
+            .t
+                top: 0
+            .m
+                top: 50%
+            .b
+                bottom: 0
+        .logo
+            height: 50%
+            img
+                height: 100%
+        .navlinks
+            display: flex
+            flex-grow: 1
+            margin: 0
+            padding: 0
+            gap: 2em
+            .navlink
+                list-style: none
+                font-size: 16px
+                line-height: 20px
+                font-weight: 400
+                color: variables.$grey-5
+                &:last-child
+                    display: none
+            .active
+                color: variables.$theme-dark
+
+        .cart
+            display: flex
+            justify-content: space-between
+            align-items: center
+            gap: 0.75em
+            font-size: 16px
+        .lang
+            display: none
+
+@media screen and (min-width: 375px) and (max-width: 568px)
+    .navigation
+        height: 60px
+        background: #fff
+        box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1)
+        z-index: 99999
+        & > *
+            display: flex
+            align-items: center
+            .wrap
+                input:checked
+                    & ~ .fake
+                        height: 100%
+                    & ~ .navlinks
+                        height: 300px
+                        transition: 0.8s
+                    & ~ .navlinks .navlink
+                        opacity: 1
+                        transition: 0.8s
+                        z-index: 999
+                        @for $i from 1 through 5
+                            &:nth-child(#{$i})
+                                top: #{-60 + 60 * $i}px
+                    & ~ .bg
+                        height: 100%
+                        background: #0003
+                        transition: 0.8s
+                .burger
+                    display: flex
+                .navlinks
+                    width: 100%
+                    height: 0
+                    position: absolute
+                    top: 60px
+                    left: 0
+                    padding: 0 1em
+                    gap: 0
+                    flex-direction: column
+                    background: #fff
+                    transition: 0.8s
+                    .navlink
+                        z-index: -1
+                        position: absolute
+                        transition: 0.8s
+                        width: calc(100% - 2em)
+                        opacity: 0
+                        background: #fff
+                        border-bottom: 1px solid variables.$grey-8
+                        display: flex
+                        align-items: center
+                        margin: 0
+                        height: 60px
+                        word-spacing: 5px
+                        &:last-child
+                            display: flex
+                        & .navCart
+                            color: variables.$theme-dark
+                            font-family: 'Poppins', sans-serif
+                            letter-spacing: 2px
+                        @for $i from 1 through 5
+                            &:nth-child(#{$i})
+                                top: -60px
+                .cart
+                    display: none
+                .lang
+                    display: block
+                    color: variables.$theme-dark
+                    font-size: 14px
+                    font-weight: 600

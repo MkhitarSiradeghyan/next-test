@@ -1,0 +1,117 @@
+@use 'variables'
+
+.search
+    transform: translateY(calc(-50% + -40px))
+    div
+        max-width: 1200px
+        display: flex
+        justify-content: center
+        .wrap
+            max-width: 96vw
+            border-radius: 10px
+            padding: 20px
+            display: flex
+            justify-content: center
+            gap: 20px
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1)
+            background: #fff
+            color: variables.$grey-1
+            .vr
+                border: 1px solid variables.$grey-8
+            .dateParams
+                display: flex
+                gap: 30px
+                .calendar
+                    display: flex
+                    flex-direction: column
+                    justify-content: flex-end
+                    cursor: pointer
+                    .dateIcon
+                        fill: variables.$theme-dark
+                        width: 34px
+                        height: 34px
+                        border-radius: 5px
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        background: variables.$grey-9
+                .date
+                    display: flex
+                    justify-content: flex-start
+                    align-items: flex-start
+                    flex-direction: column
+                    gap: 5px
+                    input
+                        display: none
+                    label
+                        font-size: 16px
+                        height: 100%
+                        display: flex
+                        align-items: center
+                    .title
+                        font-size: 18px
+                        white-space: nowrap
+                        color: variables.$theme-dark
+                        font-weight: 500
+            .params
+                gap: 20px
+                .param
+                    font-size: 18px
+                    display: flex
+                    justify-content: flex-start
+                    align-items: flex-start
+                    flex-direction: column
+                    gap: 10px
+                    .title
+                        color: variables.$theme-dark
+                        font-weight: 500
+                        flex-grow: 1
+                        display: flex
+                        justify-content: flex-start
+                        align-items: center
+                    .count
+                        display: flex
+                        justify-content: center
+                        align-items: center
+                        font-weight: 400
+                        gap: 10px
+                        .num
+                            width: 1.5em
+                        .btn
+                            width: 34px
+                            height: 34px
+                            background: variables.$grey-9
+                            color: variables.$theme-dark
+                            font-size: 36px
+                            display: flex
+                            justify-content: center
+                            align-items: center
+                            border-radius: 5px
+@media screen and (min-width: 375px) and (max-width: 920px)
+    .search
+        transform: translateY(-3vh)
+        div
+            width: 96%
+            .wrap
+                display: flex
+                flex-direction: column
+                align-items: center
+                .vr
+                    width: 100%
+                .dateParams
+                    .calendar
+                        align-items: flex-end
+                        justify-content: center
+                        .dateIcon
+                .params
+                    display: grid
+                    grid-template-columns: 1fr
+                    .param
+                        width: 100%
+                        margin: 12px 0
+                        display: grid
+                        grid-template-columns: 1fr 150px
+                        .count
+                            justify-self: end
+                        .title
+                            align-self: center

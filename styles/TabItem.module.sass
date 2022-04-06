@@ -1,0 +1,15 @@
+@use 'variables'
+
+.title
+    color: variables.$grey-5
+    font-size: 16px
+    padding: 5px 10px
+    display: block
+    cursor: pointer
+    text-transform: capitalize
+    border-radius: 5px
+.radio
+    display: none
+.radio:checked + .title
+    color: #fff
+    background: variables.$theme-dark

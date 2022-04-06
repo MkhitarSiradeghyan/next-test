@@ -1,0 +1,11 @@
+@use 'variables'
+
+.cards
+    display: grid
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr))
+    gap: 10px
+
+@media screen and (min-width: 375px) and (max-width: 568px)
+    .cards
+        display: grid
+        grid-template-columns: 1fr

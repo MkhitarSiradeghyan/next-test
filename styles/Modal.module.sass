@@ -1,0 +1,114 @@
+@use 'variables'
+
+.modal
+    position: fixed
+    top: 0
+    left: 0
+    width: 100%
+    height: 100%
+    z-index: 9999
+    display: flex
+    justify-content: center
+    align-items: center
+    background: rgba(0,0,0,0.3)
+    backdrop-filter: blur(10px)
+    font-size: 36px
+    .inner
+        width: 90vw
+        max-width: 420px
+        background: #fff
+        padding: 20px
+        position: relative
+        border-radius: 10px
+        .close
+            position: absolute
+            display: flex
+            justify-content: center
+            align-items: center
+            top: 20px
+            right: 20px
+            cursor: pointer
+            .svg
+                width: 14px
+                height: 14px
+                pointer-events: none
+        .header
+            display: flex
+            gap: 10px
+            .img
+                width: 80px
+                height: 80px
+                overflow: hidden
+                border-radius: 10px
+                img
+                    height: 100%
+            .info
+                display: flex
+                flex-direction: column
+                justify-content: center
+                gap: 10px
+                .price
+                    font-size: 24px
+                    color: variables.$theme-dark
+                    font-weight: 500
+                .title
+                    font-size: 18px
+                    font-weight: 500
+        .text
+            color: variables.$grey-6
+            font-size: 14px
+            margin: 10px 0 20px
+        .options
+            padding: 10px 0
+            border-top: 1px solid variables.$grey-8
+            display: flex
+            flex-direction: column
+            gap: 10px
+        .param
+            display: flex
+            justify-content: space-between
+            align-items: center
+            border-top: 1px solid variables.$grey-8
+            padding: 10px 0
+            .paramName
+                font-size: 18px
+                font-weight: 500
+                color: variables.$theme-dark
+            .paramValue
+                display: flex
+                justify-content: center
+                align-items: center
+                font-weight: 400
+                gap: 10px
+                font-size: 18px
+                .btn
+                    width: 34px
+                    height: 34px
+                    background: variables.$grey-9
+                    color: variables.$grey-1
+                    display: flex
+                    justify-content: center
+                    align-items: center
+                    border-radius: 5px
+                .num
+                    width: 1.5em
+                    display: flex
+                    justify-content: center
+        .modalAdd
+            padding: 10px 0
+            border-top: 1px solid variables.$grey-8
+            button
+                width: 100%
+                color: #fff
+                background: variables.$theme-dark
+                font-size: 18px
+                display: flex
+                justify-content: space-between
+                align-items: center
+                border-radius: 10px
+                padding: 10px 20px
+                border-top: 1px solid variables.$grey-8
+                .addText
+                    font-weight: 400
+                .addPrice
+                    font-weight: 500

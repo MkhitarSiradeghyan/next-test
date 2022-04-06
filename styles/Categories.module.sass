@@ -1,0 +1,18 @@
+@use 'variables'
+
+.categories
+    margin-bottom: 60px
+    .services
+        height: 60px
+        display: flex
+        flex-direction: column
+        justify-content: flex-end
+        position: sticky
+        top: 80px
+        background: #fff
+        z-index: 99
+@media screen and (min-width: 375px) and (max-width: 768px)
+    .categories
+        .services
+            height: 80px
+            top: 60px
